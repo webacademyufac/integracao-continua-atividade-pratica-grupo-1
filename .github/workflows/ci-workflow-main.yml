@@ -18,10 +18,11 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
-      - run: npm install
+      - run: npm ci
+      #- run: npm install
       - run: npm build
       - run: npm test
-        env: 
-         CI: true
+      #  env: 
+       #  CI: true
       
 
