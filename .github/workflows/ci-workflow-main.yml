@@ -1,28 +1,18 @@
-
-name: CI Workflow Main
-on:
-  push:
-    branches:
-      - 'main'
-  pull_request:
+name: CI Angular app through Github Actions
+on: push
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node: [14.x]
-    name: Node ${{ matrix.node }} sample
     steps:
-      - uses: actions/checkout@v3
-      - name: Setup node
-        uses: actions/setup-node@v3
+      ‐ uses: actions/checkout@v2
+      ‐ name: Use Node.js 14.x
+        uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node }}
-      - run: npm ci
-      #- run: npm install
-      #- run: npm build
-      - run: npm test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
-      #  env: 
-       #  CI: true
-      
+          node-version: 14.x
 
+      ‐ name: Setup
+        run: npm ci
+
+      ‐ name: Test
+        run: |
+          npm test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
