@@ -20,7 +20,7 @@ jobs:
           node-version: ${{ matrix.node }}
       - run: npm ci
       #- run: npm install
-      - run: npm build --if-present
+      - run: npm run build
       - run: npm test
       #  env: 
        #  CI: true
