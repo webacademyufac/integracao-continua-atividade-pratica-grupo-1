@@ -1,5 +1,5 @@
 {
-  "name": "sgcmapp",
+  "name": "sgcmapi-grupo-1",
   "version": "0.0.0",
   "scripts": {
     "heroku-postbuild": "ng build --prod",
